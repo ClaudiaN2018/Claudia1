@@ -1,0 +1,38 @@
+﻿<properties>
+  <tycho.version>0.26.0</tycho.version>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  <photon-repo.url>http://download.eclipse.org/releases/photon</photon-repo.url>
+</properties>
+
+<build>
+  <plugins>
+    <plugin>
+      <groupId>org.eclipse.tycho</groupId>
+      <artifactId>tycho-maven-plugin</artifactId>
+      <version>${tycho.version}</version>
+      <extensions>true</extensions>
+    </plugin>
+
+    <plugin>
+      <groupId>org.eclipse.tycho</groupId>
+      <artifactId>target-platform-configuration</artifactId>
+      <version>${tycho.version}</version>
+      <configuration>
+        <environments>
+          <environment>
+            <os>win32</os>
+            <ws>win32</ws>
+            <arch>x86</arch>
+          </environment>
+        </environments>
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
+<repositories>
+  <repository>
+    <id>eclipse-repo</id>
+    <url>${photon-repo.url}</url>
+    <layout>p2</layout>
+  </repository>
+</repositories>
